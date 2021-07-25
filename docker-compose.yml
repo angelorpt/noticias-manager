@@ -1,11 +1,25 @@
-version: "3.7"
+version: "3"
 
 networks:
   app-network:
     driver: bridge
 
 services:
-  app:
+  postgres:
+    image: postgres
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: dblaravel
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - .docker/postgres/data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  app-laravel:
     build:
       context: ./
       dockerfile: Dockerfile
@@ -18,29 +32,17 @@ services:
       - ./api:/var/www
     environment:
       - DB_CONNECTION=pgsql
-      - DB_HOST=db
+      - DB_HOST=postgres
       - DB_PORT=5432
-      - DB_DATABASE=laravel
+      - DB_DATABASE=dblaravel
       - DB_USERNAME=postgres
       - DB_PASSWORD=postgres
     networks:
       - app-network
+    links:
+      - postgres
 
-  postgres:
-    image: postgres
-    container_name: postgres
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_DB: laravel
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-    volumes:
-      - .docker/postgres/data:/var/lib/postgresql/data
-    networks:
-      - app-network
-
-  nginx:
+  app-nginx:
     image: nginx:1.19.8-alpine
     container_name: nginx
     restart: unless-stopped
