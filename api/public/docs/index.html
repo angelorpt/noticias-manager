@@ -1,0 +1,1774 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Laravel Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+    <script src="../docs/js/theme-default-3.7.0.js"></script>
+
+    <link rel="stylesheet"
+          href="//unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="//unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+<a href="#" id="nav-button">
+      <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+      </span>
+</a>
+<div class="tocify-wrapper">
+                <div class="lang-selector">
+                            <a href="#" data-language-name="bash">bash</a>
+                            <a href="#" data-language-name="javascript">javascript</a>
+                    </div>
+        <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+    <ul class="search-results"></ul>
+
+    <ul id="toc">
+    </ul>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+            <ul class="toc-footer" id="last-updated">
+            <li>Last updated: July 25 2021</li>
+        </ul>
+</div>
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1>Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://localhost</code></pre>
+
+        <h1>Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="noticias">Noticias</h1>
+
+    
+
+            <h2 id="noticias-GETapi-noticias">Noticias</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-noticias">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/noticias" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/noticias"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-noticias">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">[
+    {
+        &quot;id&quot;: 1,
+        &quot;titulo&quot;: &quot;Heatwave frequency 'surpasses levels previously predicted for 2030'&quot;,
+        &quot;subtitulo&quot;: &quot;Abbott government urged to better articulate dangers of climate change as Climate Council highlights rising number of hot days&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/world\/2014\/feb\/17\/heatwave-frequency-surpasses-levels-previously-predicted-for-2030&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-02-17 14:04:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 2,
+        &quot;titulo&quot;: &quot;Fossil fuel subsidies: majority of voters in mining states opposed tax breaks&quot;,
+        &quot;subtitulo&quot;: &quot;Poll finds only 11.9% of voters in Western Australia and 13.2% in Queensland do not support ending fossil fuel subsidies&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/australia-news\/2016\/may\/18\/fossil-fuel-subsidies-majority-of-voters-in-mining-states-opposed-tax-breaks&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-17 20:31:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 3,
+        &quot;titulo&quot;: &quot;Using mobile money to buy water and solar power in east Africa&quot;,
+        &quot;subtitulo&quot;: &quot;Mobile phones are facilitating access to utilities in poor rural communities. But do consumers have the faith to go cashless?\n&bull; Join our campaign for financial inclusion and use the hashtag #NOunbanked.&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/global-development-professionals-network\/2014\/aug\/18\/mobile-payment-utilitlies-east-africa&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-08-18 16:12:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 4,
+        &quot;titulo&quot;: &quot;Using mobile money to buy water and solar power in east Africa&quot;,
+        &quot;subtitulo&quot;: &quot;Mobile phones are facilitating access to utilities in poor rural communities. But do consumers have the faith to go cashless?\n&bull; Join our campaign for financial inclusion and use the hashtag #NOunbanked.&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/global-development-professionals-network\/2014\/aug\/18\/mobile-payment-utilitlies-east-africa\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-08-18 16:12:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 5,
+        &quot;titulo&quot;: &quot;Ecotricity considers legal challenge over EU go-ahead for Hinkley Point C&quot;,
+        &quot;subtitulo&quot;: &quot;Energy supplier joins growing number of firms and organisations seeking to block planned subsidy scheme for new nuclear plant&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2014\/oct\/12\/ecotrcity-legal-challenge-eu-hinkley-point-c-subsidy-nuclear&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-10-12 14:14:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 6,
+        &quot;titulo&quot;: &quot;Hinkley Point C subsidy scheme being investigated by National Audit Office&quot;,
+        &quot;subtitulo&quot;: &quot;Watchdog checking whether guaranteed prices of &pound;92 per MW\/hour for planned nuclear plant represents &lsquo;value for money&rsquo;&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/business\/2014\/oct\/16\/hinkley-point-c-subsidy-national-audit-office-nuclear-plant\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-10-16 18:02:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 7,
+        &quot;titulo&quot;: &quot;Energy firm RWE npower axes &pound;4bn UK windfarm amid political uncertainty&quot;,
+        &quot;subtitulo&quot;: &quot;UK's green plans dealt blow by shelving of Atlantic Array, which would have powered 1m homes and created thousands of jobs&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/environment\/2013\/nov\/26\/renewable-energy-rwe-drops-uk-turbine-project\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2013-11-26 00:43:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 8,
+        &quot;titulo&quot;: &quot;Floating windfarms raise hopes for a greener future&quot;,
+        &quot;subtitulo&quot;: &quot;A green light for new floating platforms off the Scottish coast should help lower the cost of a low-carbon economy&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2013\/nov\/24\/windfarms-float-on-sea-greener-future&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2013-11-24 00:06:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 9,
+        &quot;titulo&quot;: &quot;UK trade deal finances 'dirty energy' projects in Mexico, says Greenpeace&quot;,
+        &quot;subtitulo&quot;: &quot;Credit scheme through UK Export Finance (UKEF) runs against government commitments to fighting climate change, say activists&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/business\/2015\/mar\/05\/uk-investment-in-mexican-oil-firm-angers-greenpeace&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2015-03-05 14:00:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 10,
+        &quot;titulo&quot;: &quot;Coalition agreement: our complete audit of the programme for government&quot;,
+        &quot;subtitulo&quot;: &quot;The coalition government's agreement was signed with fanfare. But how much of its programme for government has been achieved so far? We present our comprehensive audit\n&bull; Get the data&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/news\/datablog\/2010\/sep\/17\/coalition-agreement-programme-for-government&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2010-09-17 07:30:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 11,
+        &quot;titulo&quot;: &quot;Climate change is killing us. We must use the law to fight it&quot;,
+        &quot;subtitulo&quot;: &quot;The &lsquo;Claim the Sky&rsquo; campaign aims to save lives by protecting the atmosphere as a global asset, with governments taking legal action against those who pollute it&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/commentisfree\/2015\/jun\/24\/climate-change-law-fight-claim-the-sky\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2015-06-24 09:59:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 12,
+        &quot;titulo&quot;: &quot;Rise and shine: Rosetta's Philae probe could be awake within weeks&quot;,
+        &quot;subtitulo&quot;: &quot;Increased sunlight may allow lander to re-boot and send further samples; data received so far has already challenged leading theory on planet formation&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/science\/2015\/apr\/14\/rise-and-shine-rosettas-philae-probe-could-be-awake-within-weeks&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2015-04-14 15:14:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 13,
+        &quot;titulo&quot;: &quot;The energy efficiency 'savings' that are just hot air&quot;,
+        &quot;subtitulo&quot;: &quot;Energy Saving Trust to downgrade claims for savings on new boilers and loft insulation&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/money\/2014\/jan\/18\/energy-efficiency-savings-less-than-advertised-green-deal&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-01-18 07:00:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 14,
+        &quot;titulo&quot;: &quot;Big Six energy provider RWE halves investment in renewables&quot;,
+        &quot;subtitulo&quot;: &quot;Major cuts in green investment billed for UK as npower owner blames debts, falling prices and government uncertainty&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/business\/2014\/jan\/16\/big-six-energy-rwe-halves-investment-renewables&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-01-16 17:40:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 15,
+        &quot;titulo&quot;: &quot;Australia should cut emissions by 30% by 2025 to catch up, review says&quot;,
+        &quot;subtitulo&quot;: &quot;Reductions should be even higher at 60% by 2030 in order to regain credibility among other countries, Climate Change Authority report states&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2015\/apr\/21\/australia-should-cut-emissions-by-30-by-2025-to-catch-up-review-says&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2015-04-21 14:01:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 16,
+        &quot;titulo&quot;: &quot;New, privatized African city heralds climate apartheid&quot;,
+        &quot;subtitulo&quot;: &quot;Nigeria's Eko Atlantic augurs how the super-rich will exploit the crisis of climate change to increase inequality and seal themselves off from its impacts&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/true-north\/2014\/jan\/21\/new-privatized-african-city-heralds-climate-apartheid&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-01-21 06:10:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 17,
+        &quot;titulo&quot;: &quot;EU emissions trading scheme on course to make tiny savings, says report&quot;,
+        &quot;subtitulo&quot;: &quot;Campaign group Sandbag calls for tighter caps on greenhouse gas emissions in Europe&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2010\/sep\/10\/eu-emissions-trading-savings&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2010-09-10 06:00:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 18,
+        &quot;titulo&quot;: &quot;Arctic ice shrinks 18% against record, sounding climate change alarm bells&quot;,
+        &quot;subtitulo&quot;: &quot;Scientists and environment groups say the fall is unprecedented and the clearest signal yet of global warming&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2012\/sep\/19\/arctic-ice-shrinks&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2012-09-19 18:09:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 19,
+        &quot;titulo&quot;: &quot;Rosetta mission: Philae tight landing spot on comet prompts tough decisions for Esa&quot;,
+        &quot;subtitulo&quot;: &quot;Rosetta mission controllers must decide whether to risk making lander hop from shadow of cliff blocking sunlight to its solar panels\nRosetta mission&rsquo;s Philae lander: follow latest developments&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/science\/2014\/nov\/13\/philae-lander-tight-spot-comet-tough-decisions-esa-rosetta&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-11-13 21:08:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 20,
+        &quot;titulo&quot;: &quot;The floor tiles that use foot power to light up cities&quot;,
+        &quot;subtitulo&quot;: &quot;Never mind solar energy. This clever startup product converts the kinetic force from a footstep into electricity&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/technology\/2015\/jan\/11\/floor-tile-generates-power-from-footsteps-energy-electricity-startup&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2015-01-11 12:30:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 21,
+        &quot;titulo&quot;: &quot;South Korea's aerotropolis blueprint is no flight of fancy&quot;,
+        &quot;subtitulo&quot;: &quot;Songdo, a concept city with an airport in the middle, hopes to redefine business and leisure travel for the world's emerging middle classes&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/world\/2013\/jan\/15\/songdo-south-korea-aerotropolis\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2013-01-15 09:08:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 22,
+        &quot;titulo&quot;: &quot;Conservatives to promise ban on new onshore windfarms&quot;,
+        &quot;subtitulo&quot;: &quot;Manifesto will focus on solar power and offshore wind instead in attempt to show Cameron is not abandoning green agenda&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2014\/apr\/04\/conservatives-promise-ban-new-onshore-windfarms&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-04-04 18:16:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 23,
+        &quot;titulo&quot;: &quot;Will Tory plans kill onshore wind in the UK?&quot;,
+        &quot;subtitulo&quot;: &quot;Energy minister Michael Fallon says the UK has enough onshore wind. Will new plans to pull subsidies and change planning permission mean the end of the industry?\nJoin the debate. Post your views in the comments below, email karl.mathiesen.freelance@guardian.co.uk or tweet @karlmathiesen&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2014\/apr\/24\/will-tory-plans-kill-onshore-wind-in-the-uk&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-04-24 16:15:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 24,
+        &quot;titulo&quot;: &quot;Snowdonia hydro-turbine marks major National Trust green energy project&quot;,
+        &quot;subtitulo&quot;: &quot;Power from at Hafod y Llan in Snowdonia will be sold via the grid to a green energy firm and the money invested in conservation&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2014\/apr\/23\/snowdonia-national-trust-hydro-power-hafod-y-llan-grid&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-04-23 05:00:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 25,
+        &quot;titulo&quot;: &quot;Solar energy map of Australia&quot;,
+        &quot;subtitulo&quot;: null,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/news\/datablog\/interactive\/2013\/jun\/21\/solar-energy-map-australia&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2013-06-21 08:31:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 26,
+        &quot;titulo&quot;: &quot;Gloucester cathedral&rsquo;s zero-carbon footprint&quot;,
+        &quot;subtitulo&quot;: null,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2016\/may\/20\/gloucester-cathedrals-zero-carbon-footprint&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-20 17:17:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 27,
+        &quot;titulo&quot;: &quot;Committee says 100 per cent renewable energy should be goal of strategy&quot;,
+        &quot;subtitulo&quot;: null,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.pe.ca\/News\/Local\/2016-05-20\/article-4535087\/Committee-says-100-per-cent-renewable-energy-should-be-goal-of-strategy\/1&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-20 10:08:12&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 28,
+        &quot;titulo&quot;: &quot;Energy schemes to add &pound;100 to UK household bills within five years&quot;,
+        &quot;subtitulo&quot;: &quot;Energy subsidies designed to keep lights on and support low-carbon electricity will have risen 124% by 2020-21, review finds&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/business\/2016\/may\/20\/energy-schemes-subsidies-uk-household-bills&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-19 23:01:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 29,
+        &quot;titulo&quot;: &quot;Is Botox really green? Why environmental rankings should include social impact&quot;,
+        &quot;subtitulo&quot;: &quot;Without weighing social impact, green awards - lauding Allergan, Apple, Nike and others &ndash;are losing relevance and striking the wrong chord for consumers, writes DG McCullough&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/sustainable-business\/2014\/jul\/21\/botox-apple-nike-green-ranking-environmental-worker-exploitation-social-impact&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-07-21 15:31:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 30,
+        &quot;titulo&quot;: &quot;Pharrell Williams and Al Gore announce Live Earth 2015&quot;,
+        &quot;subtitulo&quot;: &quot;Speaking at the World Economic Forum in Davos, Williams says the event will see &lsquo;humanity harmonise all at once&rsquo;&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/music\/2015\/jan\/21\/pharrell-williams-announces-live-earth-2015-davos?source=fb&amp;subsource=20150123clfb01&amp;utm_source=gpeace&amp;utm_medium=fb&amp;utm_campaign=20150123clfb01&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2015-01-21 09:43:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 31,
+        &quot;titulo&quot;: &quot;Reactions to the IPCC climate change report from business leaders and experts&quot;,
+        &quot;subtitulo&quot;: &quot;The IPCC's second climate change report has spurred plenty of debate from business leaders, news media and experts&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/sustainable-business\/2014\/apr\/01\/business-reactions-ipcc-climate-change-report-experts\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-04-01 19:44:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 32,
+        &quot;titulo&quot;: &quot;Davos 2014: business and sustainability &ndash; day two as it happened&quot;,
+        &quot;subtitulo&quot;: &quot;All of Thursday's action on business, climate change, sustainability and resources. Look out for our coverage throughout the day on:\nWater and the post-2015 development agenda\nRegulatory frameworks for climate change\nThe latest climate science on the melting arctic&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/sustainable-business\/2014\/jan\/23\/davos-2014-climate-change-resource-security-sustainability-live&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-01-23 20:00:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 33,
+        &quot;titulo&quot;: &quot;SXSW Eco 2014: live stream&quot;,
+        &quot;subtitulo&quot;: &quot;Join us for live video broadcasts from the SXSW Eco conference in Austin, Texas, which will explore topics such as sustainable oceans, green travel, smart cities and more.\nThis live stream has ended&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/sustainable-business\/2014\/oct\/06\/sxsw-eco-2014-live-stream-environment-business\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-10-06 14:10:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 34,
+        &quot;titulo&quot;: &quot;Technology and innovation: the top five stories of 2014&quot;,
+        &quot;subtitulo&quot;: &quot;This year&rsquo;s top stories featured cutting-edge breakthroughs in renewables, new developments in GMOs and the technology making cycling even more sustainable&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/sustainable-business\/2015\/jan\/02\/technology-and-innovation-the-top-five-stories-of-2014&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2015-01-02 10:00:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 35,
+        &quot;titulo&quot;: &quot;How can we use technology to create sustainable city transport? - live chat&quot;,
+        &quot;subtitulo&quot;: &quot;Join our live chat on Thursday 30 October at 1pm GMT to discuss how technology can create cleaner, smoother, more efficient city transport&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/sustainable-business\/2014\/oct\/23\/technology-sustainable-city-transport-urban-mobility\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-10-23 16:41:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 36,
+        &quot;titulo&quot;: &quot;How the ancient underground city of Cappadocia became a fruit warehouse&quot;,
+        &quot;subtitulo&quot;: &quot;For centuries, people have lived in caves and tunnels under this region of Turkey. Now the subterranean city is serving a new purpose &ndash; as storage for vast quantities of agricultural produce\n&bull; Underground cities &ndash; in pictures&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/cities\/2014\/may\/30\/ancient-underground-city-cappadocia-fruit-produce-warehouse\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-05-30 09:06:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 37,
+        &quot;titulo&quot;: &quot;Friends of the Earth denies dropping nuclear power opposition&quot;,
+        &quot;subtitulo&quot;: &quot;Green group refutes BBC report saying it has not shifted its stance on nuclear&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2014\/sep\/10\/friends-of-the-earth-nuclear-power-bbc-report&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-09-10 12:59:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 38,
+        &quot;titulo&quot;: &quot;George Osborne accused of making climate change worse with tax breaks&quot;,
+        &quot;subtitulo&quot;: &quot;Friends of the Earth claims chancellor handed out &pound;2.7bn of incentives to North Sea oil and gas firms&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/politics\/2014\/jun\/01\/george-osborne-accused-of-exacerbating-climate-change&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-06-01 18:16:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 39,
+        &quot;titulo&quot;: &quot;Renewable energy proposal helps only existing hydro companies, say analysts&quot;,
+        &quot;subtitulo&quot;: &quot;Plan developed by senator David Leyonhjelm would halt new investment in other types of renewables and push up consumer prices, say experts&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/australia-news\/2014\/nov\/25\/renewable-energy-proposal-helps-only-existing-hydro-companies-say-analysts&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-11-25 09:10:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 40,
+        &quot;titulo&quot;: &quot;Renewable energy could cut energy bills &ndash; but the government must help&quot;,
+        &quot;subtitulo&quot;: &quot;The big six still present obstacles, but pioneering local projects in the south-west are showing what can be achieved independently&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/lifeandstyle\/2014\/apr\/15\/save-money-bills-renewable-energy-climate-change-government-help\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-04-15 10:48:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 41,
+        &quot;titulo&quot;: &quot;How Hillary Clinton's State Department sold fracking to the world&quot;,
+        &quot;subtitulo&quot;: &quot;A trove of secret documents details the US government&rsquo;s global push for shale gas, reports Mother Jones&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2014\/sep\/10\/how-hillary-clintons-state-department-sold-fracking-to-the-world&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-09-10 17:27:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 42,
+        &quot;titulo&quot;: &quot;Tony Abbott leaves climate change out of his drought relief calculations&quot;,
+        &quot;subtitulo&quot;: &quot;Surely climate change means rainfall patterns are changing and that also means changes in what can be farmed, and where&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/world\/2014\/feb\/17\/tony-abbott-leaves-climate-change-out&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-02-17 03:30:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 43,
+        &quot;titulo&quot;: &quot;Google tops Greenpeace IT ranking&quot;,
+        &quot;subtitulo&quot;: &quot;Apple excluded from Cool IT Leaderboard over failure 'to pursue market opportunities to drive IT energy solutions'&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2012\/feb\/08\/google-greenpeace-it-ranking&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2012-02-08 15:47:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 44,
+        &quot;titulo&quot;: &quot;EU maps out support for Rio summit&quot;,
+        &quot;subtitulo&quot;: &quot;European leaders in Brussels agree on bold agenda for sustainable growth and energy access in global south, but critics are wary of promises on aid funding&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/global-development\/2012\/feb\/08\/eu-pledges-support-rio-earth-summit\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2012-02-08 15:50:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 45,
+        &quot;titulo&quot;: &quot;Obama inaugurates renewed energy on climate change&quot;,
+        &quot;subtitulo&quot;: &quot;That the president put climate change so high on his second-term agenda surprised many. But action must follow words&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/commentisfree\/2013\/jan\/21\/obama-inauguration-climate-change&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2013-01-21 23:12:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 46,
+        &quot;titulo&quot;: &quot;Desmond Tutu intervenes over King's College London's refusal to divest&quot;,
+        &quot;subtitulo&quot;: &quot;Archbishop Tutu in talks with administration at his former university &ndash; where vice principal dealing with fossil fuel campaigners spent 30 years working for oil giant BP&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2015\/mar\/31\/desmond-tutu-intervenes-over-kings-college-londons-refusal-to-divest&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2015-03-31 12:26:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 47,
+        &quot;titulo&quot;: &quot;June 1, 2007: The crash begins?&quot;,
+        &quot;subtitulo&quot;: &quot;Full coverage of the housing market&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/business\/2007\/may\/18\/housingmarket&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2007-05-17 23:07:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 48,
+        &quot;titulo&quot;: &quot;Obama's tar sand trap&quot;,
+        &quot;subtitulo&quot;: &quot;The tar sands of Canada constitute a deadly threat to our planet. The US and Canada must agree not to develop them&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/commentisfree\/cifamerica\/2009\/feb\/17\/barack-obama-canada-climate-change\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2009-02-18 17:00:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 49,
+        &quot;titulo&quot;: &quot;State of the union 2012: Obama's address as it happened&quot;,
+        &quot;subtitulo&quot;: &quot;Coverage of President Obama's 2012 state of the union address to Congress, as it happened&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/world\/2012\/jan\/25\/state-of-the-union-live&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2012-01-25 05:28:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 50,
+        &quot;titulo&quot;: &quot;US Congress reaches deal over spending bill&quot;,
+        &quot;subtitulo&quot;: &quot;Democratic and Republican standoff had threatened a weekend federal shutdown&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/world\/2011\/dec\/16\/us-congress-leaders-deal-spending&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2011-12-16 08:24:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 51,
+        &quot;titulo&quot;: &quot;Araucaria: 'He never dumbed down'&quot;,
+        &quot;subtitulo&quot;: &quot;The Guardian's crossword editor remembers an erudite setter whose fiendish yet elegantly constructed puzzles gave solvers plenty of fun, even as they struggled to complete them\n&bull; Araucaria's final cryptic crossword for the Guardian\n&bull; Araucaria's obituary&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/crosswords\/2013\/nov\/26\/araucaria-guardian-crossword-setter-puzzles&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2013-11-26 16:51:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 52,
+        &quot;titulo&quot;: &quot;Gates Foundation would be $1.9bn better off if it had divested from fossil fuels&quot;,
+        &quot;subtitulo&quot;: &quot;Analysis of the Bill and Melinda Gates Foundation health charity, and 13 other major funds, reveals moving investments out of coal, oil and gas and into green companies would have generated billions in higher returns&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2015\/nov\/16\/gates-foundation-divested-fossil-fuels-would-be-19bn-better-off?CMP=share_btn_tw&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2015-11-16 11:00:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 53,
+        &quot;titulo&quot;: &quot;China's Li Keqiang warns investors to prepare for wave of bankruptcies&quot;,
+        &quot;subtitulo&quot;: &quot;World's second largest economy is facing 'serious challenges' and many companies with high debts are being forced to the wall&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/world\/2014\/mar\/13\/china-li-keqiang-wans-investors-bankruptcies&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-03-13 20:29:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 54,
+        &quot;titulo&quot;: &quot;We can turn the tide of climate change by working with China&quot;,
+        &quot;subtitulo&quot;: &quot;A joint statement brings together the UK's broad science base and experience with China's scale and ability to innovate&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2014\/jun\/17\/we-can-turn-the-tide-of-climate-change-by-working-with-china&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-06-17 21:30:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 55,
+        &quot;titulo&quot;: &quot;China orders polluting and unsafe factories to shut down&quot;,
+        &quot;subtitulo&quot;: &quot;Environmental groups welcome Chinese order covering more than 2,000 sites in 18 industries&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/world\/2010\/aug\/09\/china-orders-pollution-factories-shut\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2010-08-09 18:27:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 56,
+        &quot;titulo&quot;: &quot;China overtakes US as world's biggest energy consumer&quot;,
+        &quot;subtitulo&quot;: &quot;Increasingly affluent and energy-hungry nation reflects the dramatic increase in the wattage of China's economy&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2010\/aug\/03\/china-overtakes-us-energy-consumer&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2010-08-03 11:34:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 57,
+        &quot;titulo&quot;: &quot;Melbourne faces becoming 'Anywhere City' unless we come up with a plan&quot;,
+        &quot;subtitulo&quot;: &quot;People are being shut out of major planning decisions and our control system can verge on meaningless. It&rsquo;s time to act\n&bull; See full coverage of Victoria&rsquo;s election issues&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/australia-news\/victorian-election-the-countdown\/2014\/oct\/27\/melbourne-faces-becoming-anywhere-city-unless-we-come-up-with-a-plan&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-10-26 23:11:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 58,
+        &quot;titulo&quot;: &quot;Australian election 2016: Credlin calls Abbott leadership claims &lsquo;absolute rubbish&rsquo; &ndash; politics live&quot;,
+        &quot;subtitulo&quot;: &quot;Former PM&rsquo;s chief of staff hits back at Barnaby Joyce&rsquo;s hints that Tony Abbott desires a comeback. Follow all the developments with Katharine Murphy, live&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/australia-news\/live\/2016\/jun\/01\/australian-election-2016-bill-shorten-malcolm-turnbull-campaign-politics-live?page=with:block-574e011ee4b010772f55c91c&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-31 23:57:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 59,
+        &quot;titulo&quot;: &quot;Leaked figures show spike in palm oil use for biodiesel in Europe&quot;,
+        &quot;subtitulo&quot;: &quot;Steep rise between 2010 and 2014 shows link between EU&rsquo;s renewable energy mandate and deforestation in south-east Asia, say campainers&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2016\/jun\/01\/leaked-figures-show-spike-in-palm-oil-use-for-biodiesel-in-europe&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-06-01 09:14:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 60,
+        &quot;titulo&quot;: &quot;Four visionary renewable energy projects that could pay off for Australia&quot;,
+        &quot;subtitulo&quot;: &quot;Sugarcane waste, drones, solar-powered alumina refining and strata-owned solar: which Arena R&amp;D projects could make a big difference to Australia&rsquo;s energy sector?&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/sustainable-business\/2016\/jun\/02\/four-visionary-renewable-energy-projects-that-could-pay-off-for-australia&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-06-02 00:54:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 61,
+        &quot;titulo&quot;: &quot;Tim Yeo steps aside as committee chair amid lobbying claims&quot;,
+        &quot;subtitulo&quot;: &quot;Tory MP announces move following pressure over allegations he offered to advise energy companies for cash&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/politics\/2013\/jun\/10\/tim-yeo-steps-aside-committee-chair-lobbying&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2013-06-10 19:27:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 62,
+        &quot;titulo&quot;: &quot;Tim Yeo denies claims he offered to advise solar energy lobbyists for cash&quot;,
+        &quot;subtitulo&quot;: &quot;Conservative MP and chair of energy and climate change committee is latest politician to be pulled into lobbying scandal&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/politics\/2013\/jun\/09\/tim-yeo-denies-lobbying-advice-claims\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2013-06-09 10:45:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 63,
+        &quot;titulo&quot;: &quot;'Riding roughshod over democracy': residents on fracking in North Yorkshire&quot;,
+        &quot;subtitulo&quot;: &quot;Despite thousands of objections shale gas tests in Kirby Misperton were approved on Monday. Locals living in the area tell us their concerns&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2016\/may\/24\/riding-roughshod-over-democracy-residents-on-fracking-in-north-yorkshire&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-24 13:06:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 64,
+        &quot;titulo&quot;: &quot;Leading US union SEIU makes fighting climate change a campaign priority&quot;,
+        &quot;subtitulo&quot;: &quot;Members of 2m-strong union add environmental justice to priority list\nUnion says climate change disproportionately affects its low-income members&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/us-news\/2016\/may\/24\/seiu-union-fighting-climate-change-priority&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-24 16:54:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 65,
+        &quot;titulo&quot;: &quot;Story of cities #49: the long road to Rawabi, Palestine's first planned city&quot;,
+        &quot;subtitulo&quot;: &quot;Is this privately financed city project in the heart of occupied West Bank a momentous trailblazer, or a colossal folly? Harriet Sherwood pays a visit\nRead more articles in the series here&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/cities\/2016\/may\/24\/story-cities-rawabi-planned-city-palestine&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-24 06:30:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 66,
+        &quot;titulo&quot;: &quot;From the favelas: the rise of rooftop solar projects in Brazil&quot;,
+        &quot;subtitulo&quot;: &quot;New regulations open up an unexplored market for solar in heavily populated areas such as favelas, led by co-operatives, social startups and small businesses&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/sustainable-business\/2016\/may\/24\/favelas-solar-energy-projects-brazil&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-24 11:06:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 67,
+        &quot;titulo&quot;: &quot;UK renewables cuts 'risk slowing shift to clean energy'&quot;,
+        &quot;subtitulo&quot;: &quot;Push for nuclear and gas over renewables could be more costly in the long term, warns UN&rsquo;s environment chief&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2016\/may\/24\/uk-renewables-cuts-risk-slowing-shift-to-clean-energy&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-24 10:38:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 68,
+        &quot;titulo&quot;: &quot;ExxonMobil tried to censor climate scientists to Congress during Bush era&quot;,
+        &quot;subtitulo&quot;: &quot;Exclusive: 2001 intervention adds to evidence that oil company was aware of the science and its implications for government policy and the energy industry&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/business\/2016\/may\/25\/exxonmobil-climate-change-scientists-congress-george-w-bush&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-25 10:00:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 69,
+        &quot;titulo&quot;: &quot;Barnaby Joyce links live export ban to increase in asylum seeker boats&quot;,
+        &quot;subtitulo&quot;: &quot;Deputy PM uses regional leaders&rsquo; debate to suggest Indonesian government allowed people smuggling after Gillard government banned export of live cattle&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/australia-news\/2016\/may\/25\/barnaby-joyce-links-live-export-ban-to-increase-in-asylum-seeker-boats&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-25 12:14:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 70,
+        &quot;titulo&quot;: &quot;Richard Di Natale: global warming is the most urgent threat to Australia's security&quot;,
+        &quot;subtitulo&quot;: &quot;Greens leader tells the Lowy Institute Australia should develop an independent foreign policy that made poverty and climate change priorities&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/australia-news\/2016\/may\/17\/richard-di-natale-global-warming-most-urgent-threat-australia-security&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-16 21:56:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 71,
+        &quot;titulo&quot;: &quot;Japan's coal-fired plants 'to cause thousands of early deaths'&quot;,
+        &quot;subtitulo&quot;: &quot;Greenpeace slams &lsquo;insane&rsquo; plan for dozens of power plants, with huge implications for air quality and climate change&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/world\/2016\/may\/17\/japans-coal-fired-plants-to-cause-thousands-of-early-deaths-greenpeace&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-17 08:32:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 72,
+        &quot;titulo&quot;: &quot;Direct Action funds 'spent on projects that would have happened anyway'&quot;,
+        &quot;subtitulo&quot;: &quot;Payments to greenhouse gas emitters more likely to go to reduction schemes that would have taken place without government funding, says economist&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/australia-news\/2016\/may\/16\/direct-action-funds-likely-spent-on-projects-that-would-have-happened-anyway&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-16 04:32:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 73,
+        &quot;titulo&quot;: &quot;Republican playbook reveals strategy to win over 'freedom-loving' millennials&quot;,
+        &quot;subtitulo&quot;: &quot;GOP strategists tried to answer the question that is puzzling conservatives, Hillary Clinton and advertisers alike: what do young voters want?&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/us-news\/2016\/jun\/05\/donald-trump-republican-strategy-millennial-voters&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-06-05 11:00:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 74,
+        &quot;titulo&quot;: &quot;Obama urges higher efficiency standards for household appliances&quot;,
+        &quot;subtitulo&quot;: &quot;&bull; Barack Obama issues memo to US energy department\n&bull; Standards could be implemented as soon as next August&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2009\/feb\/05\/barack-obama-energy-efficiency-environment&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2009-02-05 19:35:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 75,
+        &quot;titulo&quot;: &quot;Forget the internet of things &ndash; we need an internet of people&quot;,
+        &quot;subtitulo&quot;: &quot;From cars to umbrellas, everyday objects are becoming increasingly connected. But the question we need to ask is &ndash; should they be?&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/technology\/2015\/may\/25\/forget-internet-of-things-people&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2015-05-25 09:57:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 76,
+        &quot;titulo&quot;: &quot;Iceland's energy answer comes naturally&quot;,
+        &quot;subtitulo&quot;: &quot;Jessica Aldred visits Reykjavik to find out how Iceland is tapping into its renewable energy resources as it prepares for a low-carbon future&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2008\/apr\/22\/renewableenergy.alternativeenergy&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2008-04-22 09:57:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 77,
+        &quot;titulo&quot;: &quot;Richard Branson pledges to turn Caribbean green&quot;,
+        &quot;subtitulo&quot;: &quot;Virgin boss says that pursuing environmental and renewable energy projects is 'more interesting than making a few more bucks'&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/business\/2014\/feb\/08\/richard-branson-caribbean-green-virgin-renewable-energy&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-02-08 12:26:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 78,
+        &quot;titulo&quot;: &quot;Ikea vows to be net exporter of renewable energy by 2020&quot;,
+        &quot;subtitulo&quot;: &quot;Renewable power sources, low-energy products and supply chain emissions cuts help Swedish furniture giant boost sustainability&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/sustainable-business\/2016\/may\/27\/ikea-net-exporter-renewable-energy-2020-cop21&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-27 04:00:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 79,
+        &quot;titulo&quot;: &quot;Q&amp;A: Coalition and Labor accuse Richard Di Natale of being 'arrogant'&quot;,
+        &quot;subtitulo&quot;: &quot;Labor&rsquo;s Terri Butler and the Coalition&rsquo;s Steve Ciobo turn on Greens leader after he describes their commitment to coalmines &lsquo;the great tragedy&rsquo;&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/australia-news\/2016\/may\/31\/qa-coalition-labor-turn-on-arrogant-richard-di-natale&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-30 21:27:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 80,
+        &quot;titulo&quot;: &quot;Top 10 science and tech books for October: Amazon, sharks and the French Resistance&quot;,
+        &quot;subtitulo&quot;: &quot;Jeff Bezos under the microscope in The Everything Store, a haunting photographic depiction of the ocean's most-feared inhabitant, and the rapport between Albert Camus and Jacques Monod examined&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/books\/2013\/oct\/13\/tech-monthly-books-drugs-sharks\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2013-10-13 09:00:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 81,
+        &quot;titulo&quot;: &quot;Live Q&amp;A: What are the best ways to communicate climate solutions?&quot;,
+        &quot;subtitulo&quot;: &quot;As momentum builds towards Cop21, join us on Thursday 30th April, from 1-3pm BST, to discuss how to promote positive action on climate change\nSponsored by Connect4Climate&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/global-development-professionals-network\/2015\/apr\/23\/live-qa-what-are-the-best-ways-to-communicate-climate-solutions&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2015-04-23 15:41:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 82,
+        &quot;titulo&quot;: &quot;UK renewable energy industry warns of legal action over subsidies&quot;,
+        &quot;subtitulo&quot;: &quot;Closing scheme an year earlier than due would amount to &lsquo;wilful destruction&rsquo; by the government, climate secretary told&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/environment\/2015\/jun\/01\/uk-renewable-energy-industry-warns-of-legal-action-over-subsidies\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2015-06-01 16:20:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 83,
+        &quot;titulo&quot;: &quot;Scientists attack government climbdown on marine protection&quot;,
+        &quot;subtitulo&quot;: &quot;Academics warn government it could be condemning marine environment to 'years of overexploitation and degradation'&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2013\/apr\/22\/marine-scientists-government-marine-protection&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2013-04-22 05:01:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 84,
+        &quot;titulo&quot;: &quot;Test trial convicts fossil fuel bosses of 'ecocide'&quot;,
+        &quot;subtitulo&quot;: &quot;Top lawyers put fossil fuel bosses on trial in the UK's supreme court in a mock case to explore if ecocide - environmental destruction - could join genocide as a global crime&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/damian-carrington-blog\/2011\/sep\/29\/ecocide-oil-criminal-court&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2011-10-05 10:56:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 85,
+        &quot;titulo&quot;: &quot;Test trial convicts fossil fuel bosses of 'ecocide'&quot;,
+        &quot;subtitulo&quot;: &quot;Top lawyers put fossil fuel bosses on trial in the UK's supreme court in a mock case to explore if ecocide - environmental destruction - could join genocide as a global crime&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/environment\/damian-carrington-blog\/2011\/sep\/29\/ecocide-oil-criminal-court\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2011-10-05 10:56:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 86,
+        &quot;titulo&quot;: &quot;The main candidates' policies&quot;,
+        &quot;subtitulo&quot;: &quot;From crime to transport, what do Ken Livingstone, Boris Johnson, Brian Paddick, Sian Berry and Lindsey German have planned for London?&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/politics\/2008\/feb\/11\/london.mayor.candidates.policies&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2008-02-10 10:50:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 87,
+        &quot;titulo&quot;: &quot;Test your solar power knowledge&quot;,
+        &quot;subtitulo&quot;: null,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/quiz\/2008\/jun\/24\/energy.usa&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2008-06-24 00:12:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 88,
+        &quot;titulo&quot;: &quot;James Lovelock: 'Fudging data is a sin against science'&quot;,
+        &quot;subtitulo&quot;: &quot;In his first major interview since the climate-change emails scandal, James Lovelock says he is disgusted by the actions of some scientists, applauds 'good' climate sceptics, and warns that global warming could even lead to war&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2010\/mar\/29\/james-lovelock&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2010-03-29 16:00:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 89,
+        &quot;titulo&quot;: &quot;Rosetta: what went right with Philae, what went wrong and how it can be fixed&quot;,
+        &quot;subtitulo&quot;: &quot;The European Space Agency celebrated landing its Philae probe on comet 67P but not everything went to plan, leaving scientists with problems to solve\nPhilae lander&rsquo;s tight spot on comet prompts tough decisions for Esa\nPhilae lander sends back first ever image from comet&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/science\/2014\/nov\/13\/rosetta-philae-comet-mission-what-went-right-what-went-wrong-and-how-it-can-be-fixed&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-11-13 20:40:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 90,
+        &quot;titulo&quot;: &quot;Film-maker Finn Harries: my generation must save the planet&quot;,
+        &quot;subtitulo&quot;: &quot;Co-founder of video blog Jacksgap says his is the first generation to grow up with climate change and the last that can do anything about it &ndash; unless we act now&quot;,
+        &quot;url&quot;: &quot;https:\/\/www.theguardian.com\/environment\/2015\/jun\/08\/its-up-to-us-to-create-a-better-future-for-the-planet\/amp&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2015-06-08 09:55:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 91,
+        &quot;titulo&quot;: &quot;Top business sustainability trends of 2014&quot;,
+        &quot;subtitulo&quot;: &quot;In a tricky political climate, US corporations took steps in the right direction this year on climate change, farming, labor rights and waste\nRead more end-of-year reflections and new year&rsquo;s predictions&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/sustainable-business\/2014\/dec\/22\/2014-trends-cleantech-renewables-farm-factory-waste&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-12-22 19:16:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 92,
+        &quot;titulo&quot;: &quot;Chemicals are everywhere. Can a new business model make their use greener?&quot;,
+        &quot;subtitulo&quot;: &quot;Chemicals are used to make just about everything, and more companies &ndash; such as Coca-Cola, Ikea and GM &ndash; are starting to lease them instead of buy them. But does this new business model reduce environmental impact or just boost profits?&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/sustainable-business\/2014\/dec\/09\/chemical-leasing-ecolab-coke-ikea-gm-un-cleaning-environment&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-12-09 19:07:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 93,
+        &quot;titulo&quot;: &quot;Davos 2014: climate change and sustainability &ndash; day three as it happened&quot;,
+        &quot;subtitulo&quot;: &quot;All of the sustainable business action from Friday at the World Economic Forum. Look out for our coverage on:\nYoung people and climate change\nBusiness model innovation &amp; design\nEnding deforestation\nCities and climate change&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/sustainable-business\/2014\/jan\/24\/davos-2014-climate-change-resource-security-sustainability-day-three-live&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-01-24 23:31:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 94,
+        &quot;titulo&quot;: &quot;Trump's climate claims: experts analyze Republican's energy policy remarks&quot;,
+        &quot;subtitulo&quot;: &quot;Trump told North Dakota oil executives that they were standing at the &lsquo;forefront of a new energy revolution&rsquo; powered by deregulation and protectionism&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/us-news\/2016\/may\/26\/donald-trump-energy-policy-climate-change-keystone-xl&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-27 00:05:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 95,
+        &quot;titulo&quot;: &quot;US windfarms avoiding prosecution for eagle deaths&quot;,
+        &quot;subtitulo&quot;: &quot;More than 83,000 hunting birds are killed by windfarms each year but no wind energy company has been fined&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/environment\/2013\/may\/14\/us-windfarms-eagle-deaths&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2013-05-14 10:33:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 96,
+        &quot;titulo&quot;: &quot;The smart tech startup helping restaurants cut food waste by 25%&quot;,
+        &quot;subtitulo&quot;: &quot;Winnow&rsquo;s smart meters identify what foods are being thrown away to help restaurants track where most waste is produced&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/sustainable-business\/2016\/may\/27\/startup-smart-tech-cut-food-waste-winnow-awards-winner&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-27 04:00:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 97,
+        &quot;titulo&quot;: &quot;ExxonMobil is in its climate change bunker and won&rsquo;t let reality in&quot;,
+        &quot;subtitulo&quot;: &quot;Still stonewalling, the oil giant banned the Guardian from its AGM this week. But even its shareholders are starting to hear the gale-force winds blowing outside&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/commentisfree\/2016\/may\/27\/exxonmobil-climate-change-bunker&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-05-27 11:36:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 98,
+        &quot;titulo&quot;: &quot;New energy bill row after British Gas reveals bumper profits&quot;,
+        &quot;subtitulo&quot;: &quot;Campaigners dismiss 31% rise in household energy profits to &pound;574m as sickening&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/business\/2016\/feb\/18\/new-energy-bill-row-after-british-gas-reveals-bumper-profits&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-02-18 08:09:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 99,
+        &quot;titulo&quot;: &quot;Job losses gather momentum across UK and Europe&quot;,
+        &quot;subtitulo&quot;: &quot;Major companies in energy to banking and retail to manufacturing have announced tens of thousands of job cuts in coming months&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/business\/2016\/feb\/18\/job-losses-gather-momentum-uk-europe&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-02-18 09:41:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 100,
+        &quot;titulo&quot;: &quot;Nuclear waste is zombie waste: Australia must not become a dumping ground&quot;,
+        &quot;subtitulo&quot;: &quot;The royal commission into the nuclear fuel cycle was a Trojan horse for potential international radioactive waste disposal in outback Australia&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/commentisfree\/2016\/feb\/17\/nuclear-waste-is-zombie-waste-australia-must-not-become-a-dumping-ground&quot;,
+        &quot;fonte&quot;: &quot;The Guardian&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2016-02-17 00:30:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+    },
+    {
+        &quot;id&quot;: 101,
+        &quot;titulo&quot;: &quot;Heatwave frequency 'surpasses levels previously predicted for 2030'&quot;,
+        &quot;subtitulo&quot;: &quot;Abbott government urged to better articulate dangers of climate change as Climate Council highlights rising number of hot days&quot;,
+        &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/world\/2014\/feb\/17\/heatwave-frequency-surpasses-levels-previously-predicted-for-2030&quot;,
+        &quot;fonte&quot;: &quot;The Guardian 2&quot;,
+        &quot;description&quot;: null,
+        &quot;data_publicacao&quot;: &quot;2014-02-17 14:04:00&quot;,
+        &quot;created_at&quot;: &quot;2021-07-26T00:07:28.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-07-25T20:11:38.000000Z&quot;
+    }
+]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-noticias" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-noticias"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-noticias"></code></pre>
+</span>
+<span id="execution-error-GETapi-noticias" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-noticias"></code></pre>
+</span>
+<form id="form-GETapi-noticias" data-method="GET"
+      data-path="api/noticias"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-noticias', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/noticias</code></b>
+        </p>
+                    </form>
+
+            <h2 id="noticias-POSTapi-noticias">Salvar</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-noticias">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/noticias" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"conteudo\": \"The government has\",
+    \"subtitulo\": \"Abbott government\",
+    \"fonte\": \"The Guardian\",
+    \"titulo\": \"Heatwave frequency\",
+    \"data_publicacao\": \"2014-02-17T14:04:00\",
+    \"url\": \"http:\\/\\/www.theguardian.com\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/noticias"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "conteudo": "The government has",
+    "subtitulo": "Abbott government",
+    "fonte": "The Guardian",
+    "titulo": "Heatwave frequency",
+    "data_publicacao": "2014-02-17T14:04:00",
+    "url": "http:\/\/www.theguardian.com"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-noticias">
+</span>
+<span id="execution-results-POSTapi-noticias" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-noticias"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-noticias"></code></pre>
+</span>
+<span id="execution-error-POSTapi-noticias" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-noticias"></code></pre>
+</span>
+<form id="form-POSTapi-noticias" data-method="POST"
+      data-path="api/noticias"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-noticias', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/noticias</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>conteudo</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="conteudo"
+               data-endpoint="POSTapi-noticias"
+               data-component="body"  hidden>
+    <br>
+<p>optional Conteúdo.</p>        </p>
+                <p>
+            <b><code>subtitulo</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="subtitulo"
+               data-endpoint="POSTapi-noticias"
+               data-component="body"  hidden>
+    <br>
+<p>optional Sub-título.</p>        </p>
+                <p>
+            <b><code>fonte</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="fonte"
+               data-endpoint="POSTapi-noticias"
+               data-component="body"  hidden>
+    <br>
+<p>optional Fonte.</p>        </p>
+                <p>
+            <b><code>titulo</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="titulo"
+               data-endpoint="POSTapi-noticias"
+               data-component="body" required  hidden>
+    <br>
+<p>Fonte.</p>        </p>
+                <p>
+            <b><code>data_publicacao</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="data_publicacao"
+               data-endpoint="POSTapi-noticias"
+               data-component="body"  hidden>
+    <br>
+<p>optional Data Publicação.</p>        </p>
+                <p>
+            <b><code>url</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="url"
+               data-endpoint="POSTapi-noticias"
+               data-component="body"  hidden>
+    <br>
+<p>optional URL.</p>        </p>
+    
+    </form>
+
+            <h2 id="noticias-GETapi-noticias--id-">Noticias (id)</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-noticias--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/noticias/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/noticias/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-noticias--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 58
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;id&quot;: 1,
+    &quot;titulo&quot;: &quot;Heatwave frequency 'surpasses levels previously predicted for 2030'&quot;,
+    &quot;subtitulo&quot;: &quot;Abbott government urged to better articulate dangers of climate change as Climate Council highlights rising number of hot days&quot;,
+    &quot;url&quot;: &quot;http:\/\/www.theguardian.com\/world\/2014\/feb\/17\/heatwave-frequency-surpasses-levels-previously-predicted-for-2030&quot;,
+    &quot;fonte&quot;: &quot;The Guardian&quot;,
+    &quot;description&quot;: null,
+    &quot;data_publicacao&quot;: &quot;2014-02-17 14:04:00&quot;,
+    &quot;created_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2021-07-25T23:50:39.000000Z&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-noticias--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-noticias--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-noticias--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-noticias--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-noticias--id-"></code></pre>
+</span>
+<form id="form-GETapi-noticias--id-" data-method="GET"
+      data-path="api/noticias/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-noticias--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/noticias/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="GETapi-noticias--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>ID da Noticia.</p>            </p>
+                    </form>
+
+            <h2 id="noticias-PUTapi-noticias--id-">Atualizar</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-noticias--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/noticias/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"conteudo\": \"The government has\",
+    \"subtitulo\": \"Abbott government\",
+    \"fonte\": \"The Guardian\",
+    \"titulo\": \"Heatwave frequency\",
+    \"data_publicacao\": \"2014-02-17T14:04:00\",
+    \"url\": \"http:\\/\\/www.theguardian.com\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/noticias/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "conteudo": "The government has",
+    "subtitulo": "Abbott government",
+    "fonte": "The Guardian",
+    "titulo": "Heatwave frequency",
+    "data_publicacao": "2014-02-17T14:04:00",
+    "url": "http:\/\/www.theguardian.com"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-PUTapi-noticias--id-">
+</span>
+<span id="execution-results-PUTapi-noticias--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-noticias--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-noticias--id-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-noticias--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-noticias--id-"></code></pre>
+</span>
+<form id="form-PUTapi-noticias--id-" data-method="PUT"
+      data-path="api/noticias/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-noticias--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/noticias/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/noticias/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="PUTapi-noticias--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>ID da Noticia.</p>            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>conteudo</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="conteudo"
+               data-endpoint="PUTapi-noticias--id-"
+               data-component="body"  hidden>
+    <br>
+<p>optional Conteúdo.</p>        </p>
+                <p>
+            <b><code>subtitulo</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="subtitulo"
+               data-endpoint="PUTapi-noticias--id-"
+               data-component="body"  hidden>
+    <br>
+<p>optional Sub-título.</p>        </p>
+                <p>
+            <b><code>fonte</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="fonte"
+               data-endpoint="PUTapi-noticias--id-"
+               data-component="body"  hidden>
+    <br>
+<p>optional Fonte.</p>        </p>
+                <p>
+            <b><code>titulo</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="titulo"
+               data-endpoint="PUTapi-noticias--id-"
+               data-component="body" required  hidden>
+    <br>
+<p>Fonte.</p>        </p>
+                <p>
+            <b><code>data_publicacao</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="data_publicacao"
+               data-endpoint="PUTapi-noticias--id-"
+               data-component="body"  hidden>
+    <br>
+<p>optional Data Publicação.</p>        </p>
+                <p>
+            <b><code>url</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+                <input type="text"
+               name="url"
+               data-endpoint="PUTapi-noticias--id-"
+               data-component="body"  hidden>
+    <br>
+<p>optional URL.</p>        </p>
+    
+    </form>
+
+            <h2 id="noticias-DELETEapi-noticias--id-">Deletar</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-noticias--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/noticias/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/noticias/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-DELETEapi-noticias--id-">
+</span>
+<span id="execution-results-DELETEapi-noticias--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-noticias--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-noticias--id-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-noticias--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-noticias--id-"></code></pre>
+</span>
+<form id="form-DELETEapi-noticias--id-" data-method="DELETE"
+      data-path="api/noticias/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-noticias--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/noticias/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="id"
+               data-endpoint="DELETEapi-noticias--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>ID da Noticia.</p>            </p>
+                    </form>
+
+            <h2 id="noticias-POSTapi-noticias-lote">Salvar em Lote</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-noticias-lote">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/noticias/lote" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/noticias/lote"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-noticias-lote">
+</span>
+<span id="execution-results-POSTapi-noticias-lote" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-noticias-lote"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-noticias-lote"></code></pre>
+</span>
+<span id="execution-error-POSTapi-noticias-lote" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-noticias-lote"></code></pre>
+</span>
+<form id="form-POSTapi-noticias-lote" data-method="POST"
+      data-path="api/noticias/lote"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-noticias-lote', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/noticias/lote</code></b>
+        </p>
+                    </form>
+
+    
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+            </div>
+</div>
+<script>
+    $(function () {
+        var exampleLanguages = ["bash","javascript"];
+        setupLanguages(exampleLanguages);
+    });
+</script>
+</body>
+</html>

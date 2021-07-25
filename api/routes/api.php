@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\NoticiasController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,15 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::get('/', function () {
+//     $result = [
+//         'success' => true,
+//         'message' => 'message'
+//     ];
+//     return response()->json($result, 200);
+// });
 
-
-Route::get('/teste', function () {
-    $result = [
-        'success' => true,
-        'message' => 'message'
-    ];
-    return response()->json($result, 200);
-});
+Route::resource('noticias'     ,  NoticiasController::class);
+Route::post    ('noticias/lote', [NoticiasController::class, 'storeMany']);

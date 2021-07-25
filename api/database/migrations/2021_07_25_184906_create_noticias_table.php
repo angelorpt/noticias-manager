@@ -17,12 +17,12 @@ class CreateNoticiasTable extends Migration
             $table->id();
 
             $table->string('titulo');
-            $table->string('subtitulo');
-            $table->string('fonte');
-            $table->string('url');
+            $table->longtext('subtitulo')->nullable();
+            $table->string('url')->nullable();
+            $table->string('fonte')->nullable();
 
-            $table->longText('description');
-            $table->dateTime('data_publicacao');
+            $table->longText('description')->nullable();
+            $table->dateTime('data_publicacao')->nullable();
 
             $table->timestamps();
         });
