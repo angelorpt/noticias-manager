@@ -54,3 +54,42 @@ services:
       - ./nginx/conf:/etc/nginx/conf.d
     networks:
       - app-network
+
+  elastic:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.13.4
+    container_name: elastic
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - .docker/elastic/data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+    networks:
+      - app-network
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.11.1
+    environment:
+      ELASTICSEARCH_HOSTS: http://elastic:9200
+    ports:
+      - 5601:5601
+    depends_on:
+      - elastic
+    networks:
+      - app-network
+
+  # cerebro:
+  #   image: lmenezes/cerebro:latest
+  #   container_name: cerebro
+  #   ports:
+  #     - 9000:9000
+  #   links:
+  #     - elastic
+  #   networks:
+  #     - app-network
