@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 
 networks:
   app-network:
@@ -75,6 +75,7 @@ services:
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.11.1
+    container_name: kibana
     environment:
       ELASTICSEARCH_HOSTS: http://elastic:9200
     ports:
@@ -93,3 +94,21 @@ services:
   #     - elastic
   #   networks:
   #     - app-network
+
+  node:
+    build:
+      context: ./integrator
+      target: dev
+    container_name: integrator
+    volumes:
+      - ./integrator:/src
+    command: npm run start:dev
+    ports:
+      - 3000:3000
+    environment:
+      NODE_ENV: development
+      DEBUG: nodejs-docker-express:*
+    links:
+      - postgres
+      - app-laravel
+      - elastic
