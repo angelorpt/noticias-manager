@@ -39,7 +39,7 @@ services:
       - DB_PASSWORD=postgres
     networks:
       - app-network
-    links:
+    depends_on:
       - postgres
       - elastic
 
@@ -96,17 +96,17 @@ services:
   #   networks:
   #     - app-network
 
-  quasar:
-    build:
-      context: ./quasar
-      target: dev
-    # image: woahbase/alpine-quasar:x86_64
-    container_name: quasar
-    ports:
-      - 8080:8080
-    volumes:
-      # - ./quasar:/home/alpine/project
-      - ./quasar:/app
-    command: /bin/sh -c "yarn && quasar dev"
-    links:
-      - app-laravel
+  # quasar:
+  # build:
+  #   context: ./quasar
+  #   target: dev
+  # # image: woahbase/alpine-quasar:x86_64
+  # container_name: quasar
+  # ports:
+  #   - 8080:8080
+  # volumes:
+  #   # - ./quasar:/home/alpine/project
+  #   - ./quasar:/app
+  # command: /bin/sh -c "yarn && quasar dev watch"
+  # depends_on:
+  #   - app-laravel

@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN yarn global add @quasar/cli
 RUN yarn global add nodemon --prefix /app
-COPY . .
+# COPY . .
 # RUN yarn
 RUN quasar dev
 EXPOSE 8080
