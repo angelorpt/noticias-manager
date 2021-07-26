@@ -16,12 +16,13 @@ class CreateNoticiasTable extends Migration
         Schema::create('noticias', function (Blueprint $table) {
             $table->id();
 
+            $table->string('fonte')->nullable();
+            $table->string('url')->nullable();
+
             $table->string('titulo');
             $table->longtext('subtitulo')->nullable();
-            $table->string('url')->nullable();
-            $table->string('fonte')->nullable();
+            $table->longText('conteudo')->nullable();
 
-            $table->longText('description')->nullable();
             $table->dateTime('data_publicacao')->nullable();
 
             $table->timestamps();

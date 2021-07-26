@@ -15,7 +15,7 @@ class Noticia extends Model
                             ,'subtitulo'
                             ,'fonte'
                             ,'url'
-                            ,'description'
+                            ,'conteudo'
                             ,'data_publicacao'];
 
     public function sendToElastic() {
