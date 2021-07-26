@@ -1,2 +1,3 @@
 .docker/postgres
 .docker/elastic
+integrator/node_modules
