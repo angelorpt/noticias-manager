@@ -1,104 +1,100 @@
 <template>
   <q-page padding>
     <Container>
-
-      <Titulo titulo="Cliente" subtitulo="Visualizar Dados do Cliente" />
+      <Titulo titulo="Noticia" subtitulo="Visualizar Dados do Noticia" />
 
       <LabelGroup label="Dados" />
       <Row>
-        <Input label="Nome" v-model="cliente.nome" class="col-8" disabled />
-        <Input label="CPF"  v-model="cliente.cpf"  class="col-2" disabled mask="###.###.###-##"/>
-        <Input label="RG"   v-model="cliente.rg"   class="col-2" disabled />
+        <Input
+          label="Fonte"
+          v-model="noticia.fonte"
+          class="col-2"
+          disabled
+          :loading="loading"
+        />
+        <Input label="URL" v-model="noticia.url" class="col-8" disabled />
+        <Input
+          label="Publicação"
+          v-model="noticia.data_publicacao"
+          class="col-2"
+          :loading="loading"
+          disabled
+        />
       </Row>
 
       <Row>
-        <Input v-model="cliente.email"      label="E-mail"     disabled class="col-4" />
-        <Input v-model="cliente.fone1"      label="Fone 1"     disabled class="col-2" mask="(##) #####-####" />
-        <Input v-model="cliente.fone2"      label="Fone 2"     disabled class="col-2" mask="(##) #####-####" />
-        <Input v-model="cliente.nascimento" label="Nascimento" disabled class="col-2" />
-        <Input v-model="cliente.sexo.label" label="Sexo"       disabled class="col-2" />
+        <Input
+          label="Título"
+          v-model="noticia.titulo"
+          class="col-12"
+          :loading="loading"
+          disabled
+        />
       </Row>
-
-      <LabelGroup label="Endereço" />
       <Row>
-        <Input label="CEP"    v-model="cliente.cep"    class="col-2" disabled mask="##.###-###" />
-        <Input label="Rua"    v-model="cliente.rua"    class="col-5" disabled />
-        <Input label="Número" v-model="cliente.numero" class="col-2" disabled />
-        <Input label="Bairro" v-model="cliente.bairro" class="col-3" disabled />
+        <Input
+          label="Sub-título"
+          v-model="noticia.subtitulo"
+          class="col-12"
+          :loading="loading"
+          disabled
+        />
       </Row>
-
       <Row>
-        <Input label="Complemento" v-model="cliente.complemento" disabled class="col-5" />
-        <Input label="Cidade"      v-model="cliente.cidade"      disabled class="col-5" />
-        <Input label="UF"          v-model="cliente.uf"          disabled class="col-2" />
+        <Input
+          label="Conteúdo"
+          class="col-12"
+          :loading="loading"
+          type="textarea"
+          disabled
+        />
       </Row>
 
       <ButtonBack />
-
     </Container>
   </q-page>
 </template>
 
 <script>
-
-import { mapActions, mapGetters, mapState, mapMutations } from 'vuex'
+import { mapActions, mapGetters, mapState, mapMutations } from "vuex";
 
 export default {
-  name  : 'PageClienteNovo',
-  props : ['cliente_id'],
+  name: "PageNoticiaVisualizar",
+  props: ["noticia_id"],
   data() {
     return {
-      
-      optSexo: [
-        { label: 'Masculino', value: 'M' },
-        { label: 'Feminino' , value: 'F' },
-      ],
-
-      cliente: {
-        nome        : '' ,
-        cpf         : null ,
-        rg          : null ,
-        email       : null ,
-        fone1       : null ,
-        fone2       : null ,
-        nascimento  : null ,
-        sexo        : null ,
-        cep         : null ,
-        rua         : null ,
-        numero      : null ,
-        complemento : null ,
-        bairro      : null ,
-        cidade      : null ,
-        uf          : null ,
-      }        
-
-    }
+      noticia: {
+        id: null,
+        titulo: null,
+        subtitulo: null,
+        data_publicacao: null,
+        fonte: null,
+        url: null,
+        conteudo: null
+      }
+    };
   },
   mounted() {
-    if (this.cliente_id) {
-      this.loadCliente(this.cliente_id)
-    }    
+    if (this.noticia_id) {
+      this.loadNoticia(this.noticia_id);
+    }
   },
   watch: {
-    cliente_id() {
-      console.log('this.cliente_id', this.cliente_id);
-      if (this.cliente_id) {
-        this.loadCliente(this.cliente_id)
+    noticia_id() {
+      if (this.noticia_id) {
+        this.loadNoticia(this.noticia_id);
       }
     },
-    getCliente() {
-      this.cliente = {...this.getCliente}
+    getNoticia() {
+      this.noticia = this.getNoticia;
     }
   },
   computed: {
-    ...mapState  ('Cliente', ['saving']),
-    
-    ...mapGetters('Cliente', ['getCliente']),
+    ...mapState("Noticia", ["loading"]),
+    ...mapGetters("Noticia", ["getNoticia"])
   },
   methods: {
-    
-    ...mapActions('Cliente', ['loadCliente', 'salvarCliente', 'atualizarCliente']),
- 
-  },
-}
+    ...mapActions("Noticia", ["loadNoticia"])
+  }
+};
 </script>

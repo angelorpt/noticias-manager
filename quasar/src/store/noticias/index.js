@@ -7,10 +7,7 @@ export default {
     return {
       lstNoticias: [],
       noticia: {},
-      loading: false,
-      saving: false,
-      updating: false,
-      deleting: false
+      loading: false
     };
   },
 
@@ -23,22 +20,12 @@ export default {
     },
     setLoading(state, value) {
       state.loading = value;
-    },
-    setSaving(state, value) {
-      state.saving = value;
-    },
-    setUpdating(state, value) {
-      state.updating = value;
-    },
-    setDeleting(state, value) {
-      state.deleting = value;
     }
   },
 
   actions: {
     async loadNoticias({ commit }) {
       commit("setLoading", true);
-      commit("setSaving", false);
       try {
         const response = await Vue.prototype.$axios.get("/noticias/elastic");
         commit("setLstNoticias", response.data.hits.hits);
@@ -49,7 +36,6 @@ export default {
     },
 
     async loadNoticia({ commit }, noticiaId) {
-      commit("setSaving", false);
       commit("setLoading", true);
       try {
         const response = await Vue.prototype.$axios.get(
@@ -90,21 +76,23 @@ export default {
       return lista;
     },
 
-    getCliente({ cliente }) {
-      let sexoTemp = {
-        label: cliente.sexo == "M" ? "Masculino" : "Feminino",
-        value: cliente.sexo
+    getNoticia({ noticia }) {
+      if (!noticia) {
+        return {};
+      }
+      let noticiaNew = {
+        ...noticia,
+        id: noticia._source.id,
+        data_publicacao: Vue.prototype
+          .$moment(noticia._source.data_publicacao)
+          .format("DD/MM/YYYY HH:MM"),
+        titulo: noticia._source.titulo,
+        subtitulo: noticia._source.subtitulo,
+        url: noticia._source.url,
+        fonte: noticia._source.fonte
       };
-      let clienteNew = {
-        ...cliente,
-        nascimento: Vue.prototype
-          .$moment(cliente.nascimento, "YYYY-MM-DD")
-          .format("DD/MM/YYYY"),
-        sexo: sexoTemp
-      };
-      let clienteClone = Vue.prototype.$_.cloneDeep(clienteNew);
-
-      return clienteClone;
+      const noticiaClone = Vue.prototype.$_.cloneDeep(noticiaNew);
+      return noticiaClone;
     }
   } // getters
 };
