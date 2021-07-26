@@ -13,7 +13,7 @@ class Elastic
     }
 
     static public function all($index, $type) {
-        $uri = "http://elastic:9200/" . $index . "/" . $type . "/_search";
+        $uri = "http://elastic:9200/" . $index . "/" . $type . "/_search?size=10000";
         $response = Http::get($uri);
         return $response->body();
     }
