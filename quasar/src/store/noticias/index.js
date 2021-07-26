@@ -6,7 +6,7 @@ export default {
   state: () => {
     return {
       lstNoticias: [],
-      noticia: {},
+      noticia: null,
       loading: false
     };
   },
@@ -65,10 +65,16 @@ export default {
           data_publicacao: Vue.prototype
             .$moment(item._source.data_publicacao)
             .format("DD/MM/YYYY HH:MM"),
-          titulo: item._source.titulo.substring(0, 49) + "...",
-          subtitulo: item._source.subtitulo.substring(0, 45) + "...",
-          url: item._source.url.substring(0, 30) + "...",
-          fonte: item._source.fonte,
+          titulo: item._source.titulo
+            ? item._source.titulo.substring(0, 49) + "..."
+            : "",
+          subtitulo: item._source.subtitulo
+            ? item._source.subtitulo.substring(0, 45) + "..."
+            : "",
+          url: item._source.url
+            ? item._source.url.substring(0, 30) + "..."
+            : "",
+          fonte: item._source.fonte ? item._source.fonte : "",
           id: item._source.id
         };
       });
@@ -81,16 +87,15 @@ export default {
         return {};
       }
       let noticiaNew = {
-        ...noticia,
         id: noticia._source.id,
         data_publicacao: Vue.prototype
           .$moment(noticia._source.data_publicacao)
           .format("DD/MM/YYYY HH:MM"),
-        titulo: noticia._source.titulo,
-        subtitulo: noticia._source.subtitulo,
-        url: noticia._source.url,
-        fonte: noticia._source.fonte,
-        conteudo: noticia._source.conteudo
+        titulo: noticia._source.titulo ? noticia._source.titulo : "",
+        subtitulo: noticia._source.subtitulo ? noticia._source.subtitulo : "",
+        url: noticia._source.url ? noticia._source.url : "",
+        fonte: noticia._source.fonte ? noticia._source.fonte : "",
+        conteudo: noticia._source.conteudo ? noticia._source.conteudo : ""
       };
       const noticiaClone = Vue.prototype.$_.cloneDeep(noticiaNew);
       return noticiaClone;
