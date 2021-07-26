@@ -43,6 +43,7 @@
       <Row>
         <Input
           label="Conteúdo"
+          v-model="noticia.conteudo"
           class="col-12"
           :loading="loading"
           type="textarea"

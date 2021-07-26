@@ -89,7 +89,8 @@ export default {
         titulo: noticia._source.titulo,
         subtitulo: noticia._source.subtitulo,
         url: noticia._source.url,
-        fonte: noticia._source.fonte
+        fonte: noticia._source.fonte,
+        conteudo: noticia._source.conteudo
       };
       const noticiaClone = Vue.prototype.$_.cloneDeep(noticiaNew);
       return noticiaClone;
