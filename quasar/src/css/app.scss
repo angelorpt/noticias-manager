@@ -1,0 +1,124 @@
+/* app global css */
+
+/* Configuração Global da Barra Superior de Cada Tela */
+
+
+
+.k-active {
+  color: #EDBB2E;
+}
+
+.k-links-group {
+  display: flex;
+  align-content: flex-end;
+  margin-right: 50px;
+}
+
+.k-links {
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: left;
+  border-radius: 0px;
+  border-right: 1px solid #EDBB2E;
+}
+
+.k-menu-bar {
+  height: 70px;
+}
+
+.k-title-bar {
+  font: Regular 22px/31px Source Sans Pro;
+  font-family: sans-serif;
+  font-size: 22px;
+  margin-left: 5rem;
+  text-align: left;
+  letter-spacing: 0px;
+  color: #F7F7F7;
+  opacity: 1;
+}
+
+.k-title-page {
+  font: Bold 20px/23px Helvetica;
+  text-align: left;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+
+.k-subtitle-page {
+  font: Regular 13px/15px Helvetica Neue;
+  text-align: left;
+  letter-spacing: 0px;
+  color: #707070;
+  opacity: 1;
+}
+
+.my-sticky-header-table .q-table__top,
+thead tr:first-child th {
+  background-color: #1976D2;
+  color: white;
+}
+
+.k-btn-new {
+  background: #007FEB 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  color: white;
+  opacity: 1;
+  width: 52px;
+  height: 52px;
+}
+
+.k-btn-side-tabs {
+  margin-top: -5rem;
+}
+
+
+/*
+  Botões de Salvar
+*/
+
+.k-btn-group {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.k-btn-col-group {
+  display: flex;
+  justify-content: flex-end;
+}
+.k-btn {
+  width: 148px;
+  height: 43px;
+  border-radius: 4px;
+  text-align: center;
+  font: Bold 12px/30px Arial;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+.k-btn-salvar {
+  background: #007FEB 0% 0% no-repeat padding-box;
+}
+.k-btn-cancelar {
+  background: #2699FB 0% 0% no-repeat padding-box;
+}
+
+/*
+  FORMS
+*/
+
+.k-group-form 
+{
+  color: var(--unnamed-color-707070);
+  text-align: left;
+  font-size: 15px;
+  font: Regular 15px/17px Arial;
+  letter-spacing: 0px;
+  color: #707070;
+  opacity: 1;  
+}
+
+.k-input-pa
+{
+  padding: 10px;
+}

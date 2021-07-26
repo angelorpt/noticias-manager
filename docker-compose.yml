@@ -21,7 +21,7 @@ services:
 
   app-laravel:
     build:
-      context: ./
+      context: ./api
       dockerfile: Dockerfile
     image: laravel8-php-fpm-80
     container_name: app
@@ -41,6 +41,7 @@ services:
       - app-network
     links:
       - postgres
+      - elastic
 
   app-nginx:
     image: nginx:1.19.8-alpine
@@ -80,10 +81,10 @@ services:
       ELASTICSEARCH_HOSTS: http://elastic:9200
     ports:
       - 5601:5601
-    depends_on:
-      - elastic
     networks:
       - app-network
+    links:
+      - elastic
 
   # cerebro:
   #   image: lmenezes/cerebro:latest
@@ -94,3 +95,18 @@ services:
   #     - elastic
   #   networks:
   #     - app-network
+
+  quasar:
+    build:
+      context: ./quasar
+      target: dev
+    # image: woahbase/alpine-quasar:x86_64
+    container_name: quasar
+    ports:
+      - 8080:8080
+    volumes:
+      # - ./quasar:/home/alpine/project
+      - ./quasar:/app
+    command: /bin/sh -c "yarn && quasar dev"
+    links:
+      - app-laravel
