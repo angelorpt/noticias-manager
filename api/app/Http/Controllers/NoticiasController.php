@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Noticia;
+use App\Jobs\RabbitMQJob;
 
 /**
  * @group Noticias
@@ -65,7 +66,8 @@ class NoticiasController extends Controller
                 'success' => true,
                 'message' => 'Notícia salva com sucesso'
             ];
-            $noticia->sendToElastic();
+            // $noticia->sendToElastic();
+            RabbitMQJob::dispatch($noticia->toArray())->onConnection('rabbitmq');
             return response()->json($result, 201);
         } catch (Exception $e) {
             $result = [
@@ -89,7 +91,8 @@ class NoticiasController extends Controller
             foreach ($noticias as $noticia)
             {
                 $noticiaSaved = Noticia::create($noticia);
-                $noticiaSaved->sendToElastic();
+                // $noticiaSaved->sendToElastic();
+                RabbitMQJob::dispatch($noticia->toArray())->onConnection('rabbitmq');
             }
             $result = [
                 'success' => true,
