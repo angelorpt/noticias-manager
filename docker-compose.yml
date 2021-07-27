@@ -21,7 +21,7 @@ services:
 
   app-laravel:
     build:
-      context: ./
+      context: ./api
       dockerfile: Dockerfile
     image: laravel8-php-fpm-80
     container_name: app
@@ -39,8 +39,9 @@ services:
       - DB_PASSWORD=postgres
     networks:
       - app-network
-    links:
+    depends_on:
       - postgres
+      - elastic
 
   app-nginx:
     image: nginx:1.19.8-alpine
@@ -80,10 +81,10 @@ services:
       ELASTICSEARCH_HOSTS: http://elastic:9200
     ports:
       - 5601:5601
-    depends_on:
-      - elastic
     networks:
       - app-network
+    links:
+      - elastic
 
   # cerebro:
   #   image: lmenezes/cerebro:latest
@@ -114,3 +115,16 @@ services:
       - postgres
       - app-laravel
       - elastic
+
+  quasar:
+    build:
+      context: ./quasar
+      target: dev
+    container_name: quasar
+    ports:
+      - 8080:8080
+    volumes:
+      - ./quasar:/app
+    command: /bin/sh -c "yarn && quasar dev watch"
+    depends_on:
+      - app-laravel

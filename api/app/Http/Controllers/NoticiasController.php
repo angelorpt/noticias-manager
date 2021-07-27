@@ -60,11 +60,12 @@ class NoticiasController extends Controller
         $noticia = $request->json()->all();
 
         try {
-            Noticia::create($noticia);
+            $noticia = Noticia::create($noticia);
             $result = [
                 'success' => true,
                 'message' => 'Notícia salva com sucesso'
             ];
+            $noticia->sendToElastic();
             return response()->json($result, 201);
         } catch (Exception $e) {
             $result = [
@@ -87,7 +88,8 @@ class NoticiasController extends Controller
         try {
             foreach ($noticias as $noticia)
             {
-                Noticia::create($noticia);
+                $noticiaSaved = Noticia::create($noticia);
+                $noticiaSaved->sendToElastic();
             }
             $result = [
                 'success' => true,

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Utils\Elastic;
 
 class Noticia extends Model
 {
@@ -14,8 +15,11 @@ class Noticia extends Model
                             ,'subtitulo'
                             ,'fonte'
                             ,'url'
-                            ,'description'
+                            ,'conteudo'
                             ,'data_publicacao'];
 
+    public function sendToElastic() {
+        Elastic::send('noticias', 'registros', $this);
+    }
 
 }
