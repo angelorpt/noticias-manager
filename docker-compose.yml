@@ -96,17 +96,15 @@ services:
   #   networks:
   #     - app-network
 
-  # quasar:
-  # build:
-  #   context: ./quasar
-  #   target: dev
-  # # image: woahbase/alpine-quasar:x86_64
-  # container_name: quasar
-  # ports:
-  #   - 8080:8080
-  # volumes:
-  #   # - ./quasar:/home/alpine/project
-  #   - ./quasar:/app
-  # command: /bin/sh -c "yarn && quasar dev watch"
-  # depends_on:
-  #   - app-laravel
+  quasar:
+    build:
+      context: ./quasar
+      target: dev
+    container_name: quasar
+    ports:
+      - 8080:8080
+    volumes:
+      - ./quasar:/app
+    command: /bin/sh -c "yarn && quasar dev watch"
+    depends_on:
+      - app-laravel
