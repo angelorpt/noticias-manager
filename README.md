@@ -134,6 +134,10 @@ Na sua máquina, instale:
    http://localhost:8080/
    ```
 
+   ![front_noticias](prints/front_noticias.png)
+
+   ![front_noticias_detalhes](prints/front_noticias_detalhes.png)
+
 ### Encerrando o projeto
 
 1. No terminal, no diretório principal do projeto
