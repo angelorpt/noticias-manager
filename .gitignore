@@ -1,3 +1,5 @@
 .docker/postgres
 .docker/elastic
 integrator/node_modules
+api/public/docs
+api/.scribe
