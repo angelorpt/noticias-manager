@@ -100,7 +100,7 @@ services:
     build:
       context: ./integrator
       target: dev
-    container_name: integrator
+    container_name: node
     volumes:
       - ./integrator:/src
     command: npm run start:dev
