@@ -28,6 +28,8 @@ services:
     restart: unless-stopped
     tty: true
     working_dir: /var/www
+    ports:
+      - 8000:8000
     volumes:
       - ./api:/var/www
     environment:
@@ -100,7 +102,7 @@ services:
     build:
       context: ./integrator
       target: dev
-    container_name: node
+    container_name: integrator
     volumes:
       - ./integrator:/src
     command: npm run start:dev

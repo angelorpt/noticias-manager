@@ -8,4 +8,4 @@ RUN apt-get install -y iputils-ping
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-EXPOSE 9000
+EXPOSE 8000
