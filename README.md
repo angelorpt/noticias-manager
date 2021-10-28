@@ -129,7 +129,7 @@ Na sua máquina, instale:
 
    ```
    POST
-   http://localhost:8080/api/noticias/lote
+   http://localhost:8100/api/noticias/lote
    ```
 
    É possível enviar um arquivo selecionado a opção **File**
