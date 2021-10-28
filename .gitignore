@@ -1,5 +1,9 @@
 .docker/postgres
 .docker/elastic
+.docker/nginx
+.docker/nginx/conf/app.conf
+
 integrator/node_modules
+
 api/public/docs
 api/.scribe

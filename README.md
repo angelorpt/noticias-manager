@@ -37,6 +37,15 @@ Na sua máquina, instale:
 
 <br>
 
+### Permissão de escrita no Volume do Docker
+
+0. [No linux] Após o clonar o projeto, criar o diretório **.docker** e conceder permissão de escrita
+
+   ```bash
+   mkdir .docker
+   sudo chmod -R 777 .docker/
+   ```
+
 ### Configurando o FrontEnd
 
 1. Acesse o diretório **quasar**. No terminal utilize o comando:
