@@ -27,7 +27,7 @@ services:
     container_name: app
     restart: unless-stopped
     tty: true
-    working_dir: /var/www
+    # working_dir: /var/www
     volumes:
       - ./api:/var/www
     environment:

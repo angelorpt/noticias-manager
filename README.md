@@ -33,6 +33,7 @@ Na sua máquina, instale:
 
 - Docker
 - Node
+- Yarn
 
 <br>
 
@@ -41,7 +42,7 @@ Na sua máquina, instale:
 1. Acesse o diretório **quasar**. No terminal utilize o comando:
 
    ```bash
-   npm install
+   yarn
    ```
 
 ### Subindo o Docker
@@ -84,7 +85,14 @@ Na sua máquina, instale:
    php artisan migrate
    ```
 
-6. [Opcional] Caso deseje visualizar a documentação da API.
+6. Atualizar permissões de diretório
+
+   ```bash
+   chmod -R 777 storage/
+   chmod -R 777 bootstrap/cache/
+   ```
+
+7. [Opcional] Caso deseje visualizar a documentação da API.
 
    ```bash
    php artisan scribe:generate

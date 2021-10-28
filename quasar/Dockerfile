@@ -1,12 +1,12 @@
 # develop stage
-FROM node:13.14-alpine as dev
+FROM node:14-alpine as dev
 WORKDIR /app
 COPY package*.json ./
 RUN yarn global add @quasar/cli
 RUN yarn global add nodemon --prefix /app
 # COPY . .
-# RUN yarn
-RUN quasar dev
+RUN yarn
+CMD ["quasar", "dev"]
 EXPOSE 8080
 
 # build stage

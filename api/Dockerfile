@@ -1,5 +1,7 @@
 FROM php:8.0.3-fpm-buster
 
+WORKDIR /var/www
+
 RUN docker-php-ext-install bcmath pdo_mysql
 
 RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pdo pdo_pgsql
