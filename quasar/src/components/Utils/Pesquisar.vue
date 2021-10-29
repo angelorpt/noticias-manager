@@ -1,5 +1,5 @@
 <template>
-  <q-input round borderless label="Pesquisar" class="q-mt-sm" v-model="value" >
+  <q-input round borderless label="Pesquisar" class="q-mt-sm" v-model="value">
     <template v-slot:prepend>
       <q-icon name="search" />
     </template>
@@ -8,17 +8,17 @@
 
 <script>
 export default {
-  name: 'ComponentPesquisar',
-  props: ['filtrar'],
-  data () {
+  name: "ComponentPesquisar",
+  props: ["filtrar"],
+  data() {
     return {
-      value: ''
-    }
+      value: "",
+    };
   },
   watch: {
     value() {
-      this.$emit('pesquisa', this.value);
-    }
-  }
-}
+      this.$emit("pesquisa", this.value);
+    },
+  },
+};
 </script>

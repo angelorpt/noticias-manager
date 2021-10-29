@@ -3,12 +3,9 @@
     <Container>
       <Titulo titulo="Notícias" subtitulo="Visualize as notícias publicadas" />
 
-      <PesquisarNew
-        icon="description"
-        :filtrar="filtrar"
-        :permissao="true"
-        to="/noticias/novo"
-      />
+      <!-- <Row class="col-md-3 offset-md-9">
+        <pesquisar icon="description" pesquisa="filtrar" />
+      </Row> -->
 
       <Row class="q-mt-md">
         <Table
@@ -37,11 +34,11 @@ export default {
         { label: "Titulo", field: "titulo", align: "left" },
         { label: "Subtitulo", field: "subtitulo", align: "left" },
         { label: "URL", field: "url", align: "left" },
-        { label: "Ações", sort: false }
+        { label: "Ações", sort: false },
       ],
 
       botoesAcao: [],
-      lstNoticias_filter: []
+      lstNoticias_filter: [],
     };
   },
   mounted() {
@@ -51,12 +48,12 @@ export default {
   watch: {
     listaNoticiasToTable() {
       this.lstNoticias_filter = this.listaNoticiasToTable;
-    }
+    },
   },
   computed: {
     ...mapState("Noticia", ["loading", "lstNoticias"]),
 
-    ...mapGetters("Noticia", ["listaNoticiasToTable"])
+    ...mapGetters("Noticia", ["listaNoticiasToTable"]),
   },
   methods: {
     ...mapActions("Noticia", ["loadNoticias"]),
@@ -68,8 +65,8 @@ export default {
           to: "/noticias/visualizar/{field}",
           fieldToRoute: "id",
           tooltip: "Visualizar Notícia",
-          permission: true
-        }
+          permission: true,
+        },
       ];
     },
 
@@ -81,7 +78,7 @@ export default {
         "url",
         "titulo",
         "subtitulo",
-        "data_publicacao"
+        "data_publicacao",
       ];
       this.lstNoticias_filter = this.filterArray(
         this.listaNoticiasToTable,
@@ -93,7 +90,7 @@ export default {
 
     loadDados() {
       this.loadNoticias();
-    }
-  } // methods
+    },
+  }, // methods
 };
 </script>
